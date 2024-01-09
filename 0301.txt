@@ -1,0 +1,379 @@
+
+
+// if statement
+/*
+IF ( sart  ) {
+    
+    sart dogru ( true ) ise bu kod parcasi calisir 
+}
+if ( sart1 ){
+    
+    eger satr1 dogru ise bu kisim calisir
+} else if ( sart 2 ){
+            
+    eger sart1 yanlis ama sart2 dogru ise burasi calsir
+} ELSE {
+            
+     eger yukardaki sartlarin hic biri dogru degilse en son olarak calisir
+}
+*/
+integer sayi = -10 ;
+// eger sayi 0 dan buyuk ise pozitif sayidir
+if ( sayi > 0 ) {     
+    system.debug ( ' SAYI POZITIF');
+}
+//  eger sayi sifirdan buyuk ise POZITIF  eger sifirdan Kucuk ise NEGATIF
+integer sayi = 0 ;
+if ( sayi > 0 ) {     
+    system.debug ( ' SAYI POZITIF');
+} else if ( sayi < 0 ) {     
+    system.debug ( ' SAYI NEGATIF' ) ;
+} else {
+    
+   system.debug('SAYI NOTR') ;
+}
+//  eger sayi sifirdan buyuk ise 3 katini veriniz
+//  eger sifirdan Kucuk ise  5 katini veriniz
+// eger sifir ise ekrana sayi notr yazdiriniz
+integer sayi = -10 ;
+if ( sayi > 0 ) {     
+integer sonuc = 0;
+    sonuc = sayi*3 ;
+  system.debug( ' sayi 0 dan buyuk ve uc kati >> '+ sonuc);  
+    
+} else if ( sayi < 0 ) {     
+ integer sonuc2 = 0;
+   sonuc2 = sayi*5 ;
+  system.debug( ' sayi 0 dan kucuk ve bes kati >> '+ sonuc2);  
+      
+    
+} else {
+    
+    
+   system.debug('SAYI NOTR') ;
+}
+//  bir sayinin cift mi tek mi sayi oldugunu belirten bir kod yaziniz
+integer sayi = 10 ;
+// cift olmasini naisl belirleriz
+if ( math.mod(sayi,2) == 0    ){
+   system.debug(' SAYI CIFT SAYIDIR'); 
+} else if ( math.mod(sayi,2) != 0      ){
+           
+   system.debug(' SAYI TEK SAYIDIR');        
+} else {
+    
+    system.debug(' valla hic beklemedigim bir sonuc cikti');        
+}
+//   bir sifrenin dogru olup olamdigini kontrol ediniz
+string sifre = 'Ankara';
+string kullanicininVerdigiSifre = 'ankara';  // SIFRE YANLIS
+if (  sifre.equals(kullanicininVerdigiSifre)    ){
+    system.debug('SIFRE DOGRU');  
+    
+} else {
+  system.debug('SIFRE YANLIS'); 
+    
+}
+//  TERNARY 
+//  sayi sifirdan buyuk mu degil mi
+integer sayi = 0 ;
+if ( sayi > 0 ) {    system.debug ( 'BUYUK');}      else {   system.debug ( 'DEGIL');   }
+   
+string sonuc = ( sayi > 0 ) ?          'BUYUK'                     :         'DEGIL'  ; 
+system.debug ('TERNARY SONUC  >>> ' + sonuc  ) ;
+// TERNARY SONUC  >>> DEGIL
+//  eger sayi sifirdan buyuk ise POZITIF  
+//  eger      Kucuk ise NEGATIF
+// sifir unutma
+integer sayi = 0 ;
+if ( sayi > 0 ) { 
+    system.debug ( ' SAYI POZITIF');
+} else if ( sayi < 0 ) { 
+    system.debug ( ' SAYI NEGATIF' ) ;
+}else {   
+    system.debug('SAYI NOTR') ;
+}
+string sonuc = ( sayi > 0 )   ?      'BUYUK'                      : (  ( sayi == 0 ) ?     'SIFIR'  :  'KUCUK ' );
+system.debug ('TERNARY SONUC  >>> ' + sonuc  ) ;
+// SWITCH ON 
+//  mevsim ismi verildiginde o mevsimin aylarini gostren bir kod      yaziniz 
+string mevsim = 'kis';
+if ( mevsim.equals('yaz')){
+    system.debug('haziran , temmuz , agustos');
+        
+} else if (  mevsim.equals('sonbahar')    ) {
+    
+    system.debug('eylul , ekim , kasim'); 
+}else if (  mevsim.equals('kis')    ) {
+    
+    system.debug('aralik , ocak , subat'); 
+} else if (  mevsim.equals('ilkbahar')    ) {
+    
+    system.debug('mart , nisan , mayis'); 
+} else {
+    
+    system.debug( ' MEVSIM ISMINDE PROBLEM VAR');
+}
+string mevsim = 'yaz';
+SWITCH ON mevsim {
+    
+    when 'yaz'       {  system.debug(' haziran , temmuz, agustos');     }
+    when 'sonbahar'  {   system.debug(' Eylul  , ekim , kasim');        }
+    when 'kis'       {  system.debug(' Aralik  , ocak , subat');        }
+    when 'ilkbahar'  {   system.debug(' mart  , nisan , mayis');        }
+    when else        {  system.debug(' MEVSIM ISMINDE PROBLEM VAR');    }
+    
+}
+/*
+once ENUM class hazirlanir 
+public ENUM mevsimler {
+    
+   YAZ , SONBAHAR , KIS , ILKBAHAR  
+    
+    
+}
+*/
+string kullaniciSecenegi =  mevsimler.KIS ;
+SWITCH ON   kullaniciSecenegi {
+    
+    when YAZ       {  system.debug(' haziran , temmuz, agustos');     }
+    when SONBAHAR  {   system.debug(' Eylul  , ekim , kasim');        }
+    when KIS       {  system.debug(' Aralik  , ocak , subat');        }
+    when ILKBAHAR  {   system.debug(' mart  , nisan , mayis');        }
+    when else      {  system.debug(' MEVSIM ISMINDE PROBLEM VAR');    }
+}
+
+
+
+//      Class
+
+
+public class Araba {
+    
+//class sadece public veya global olabilir 
+
+// default olarak bir adet CONSTRUCTOR vardir
+/*
+public araba(){
+
+}
+
+//manuel consructor yazinca default olan silinir
+ */ 
+    
+   public araba(){
+}
+    
+    
+  public araba( string x    ){
+      this.arabaMarkasi= x;
+}    
+    
+  public araba( integer armut , string elma     ){
+      this.arabaMarkasi= elma;
+      this.uretimYili = armut;
+}   
+   
+      public araba( string renk ,integer yil      ){
+      this.arabaRengi= renk;
+      this.uretimYili = yil;
+}   
+    
+    public  string arabaMarkasi = 'JEEP';   // default access modier PRIVATE dir
+  
+    public integer uretimYili = 2020 ;
+   
+   public string arabaRengi = 'Kirmizi';
+    
+    //  method sonradan ogrenilecek
+    public void methodIsmi(){
+        
+        system.debug('nasilsin');
+    }
+    
+    
+
+    
+}
+
+
+
+///  ANAYMOUS WINDOW
+integer sayi =10 ;
+/*
+ACCESS MODIFIER ==  erisim izni 
+private    ===  sadece class icerisinde kullinabilen degisken
+protected  === klass icince veya inner class incen veya child class tarafindan ulasilabilir
+public    ===  ayni org icerinde herkes ulasabilir
+global  ===   tum dunya ulasabilir
+*/
+
+
+Araba  yeniAraba = new Araba();
+//system.debug( yeniAraba.arabaMarkasi  ); // JEEP
+yeniAraba.methodIsmi() ; //nasilsin
+
+Araba  yeniAraba2 = new Araba();
+system.debug( yeniAraba2.arabaMarkasi  ); // JEEP
+
+Araba  yeniAraba = new Araba();
+system.debug( yeniAraba.arabaMarkasi  ); // JEEP
+system.debug( yeniAraba.uretimYili  );  // 2020
+
+// manuel contstucro ile arab uretimi
+
+Araba  yeniAraba3 = new Araba('MAZDA');
+system.debug(yeniAraba3.arabaMarkasi);  // MAZDA
+system.debug( yeniAraba3.uretimYili  ); // |2020
+
+Araba  yeniAraba4 = new Araba( 1960 , 'MUSTANG'    );
+system.debug(yeniAraba4.arabaMarkasi);  // MUSTANG
+system.debug( yeniAraba4.uretimYili  );  // 1960
+
+Araba  yeniAraba5 = new Araba(   'mavi' ,2024     );
+system.debug(yeniAraba5.arabaMarkasi);    // JEEp
+system.debug( yeniAraba5.uretimYili  );   // 2024
+system.debug( yeniAraba5.arabaRengi  );  // mavi
+
+Math.pow( 3,7); //math class
+
+
+
+//  MATH CLASS
+public class MathClass {
+   
+  public  VOID multiplication  ( integer  num1 , integer num2){
+        
+        integer result = num1 * num2 ;
+        
+        system.debug('multiplication of ' +  num1 + ' and ' +   num2 + ' is equal to >> '  +    result) ;       
+    } 
+    
+   
+}
+//  ANONUMOUS WINDOW
+MathClass  sample = new MathClass();
+sample.multiplication  ( 3 , 5); 
+// multiplication of3 and 5 is equal to >> 15
+
+
+
+
+
+//      ODEV
+
+//Example 9:According to the given rules convert number grades to letter grades
+//          0-49==>F    50-69==>D   70-79==>C    80-89==>B    90-100==>A
+
+// example 9:
+integer grade= 69;
+if (grade >= 0 && grade < 50) {
+             system.debug('grade >> :' + 'F');
+        } else if (grade >= 50 && grade < 70) {
+            system.debug('grade >> :' + 'D');
+        } else if (grade >= 70 && grade < 80) {
+            system.debug('grade >> :' + 'C');
+        } else if (grade >= 80 && grade < 90) {
+           system.debug('grade >> :' + 'B');
+        } else if (grade >= 90 && grade <= 100) {
+             system.debug('grade >> :' + 'A');
+        } else {
+             system.debug ('Invalid score');
+        }
+
+//Example 10: Print the month names for the given month number
+//            1==>January    2==>February  etc.
+
+// example 10
+integer monthNumber = 13;
+SWITCH ON monthNumber {
+ 	when 1   {  system.debug(' January'); }
+    when 2	 {  system.debug('February'); }
+    when 3   {  system.debug(' March');   }
+    when 4   {  system.debug(' April');   }
+    when 5   {  system.debug(' May');     }
+    when 6   {  system.debug(' June');    }
+    when 7   {  system.debug(' July');    }
+    when 8   {  system.debug(' August');  }
+    when 9   {  system.debug(' September');}
+    when 10  {  system.debug(' October'); }
+    when 11  {  system.debug(' November');}
+    when 12  {  system.debug(' December');}
+  when else  {  system.debug('incorrect number' );}
+  }
+
+
+
+//Example 11: If the person is male
+//               i)If he is less than 16, print 'Should go to school'
+//               ii)If he is less than 66, print 'Should work'
+//               iii)If he is greater than 65, print 'Should be retired'
+//            If the person is female
+//               i)If she is less than 18, print 'Should go to school'
+//               ii)If she is less than 60, print 'Should work'
+//               iii)If she is greater than 60, print 'Should be retired'
+
+//Example 11
+integer ageOfPerson = 61 ;
+Boolean isMale= False;
+
+
+if ( isMale == True &&  ageOfPerson > 7 && ageOfPerson < 16 ) {
+    system.debug ( ' Should go to school');
+               
+} else if ( isMale == True && ageOfPerson > 15 && ageOfPerson < 66 ) {
+    system.debug ( ' Should work');
+               
+} else if ( isMale ==True && ageOfPerson > 66 ) {
+    system.debug ( ' Should be retired');
+
+    
+} else if ( isMale ==False && ageOfPerson > 7 && ageOfPerson < 18 ) {
+    system.debug ( 'kk Should go to school');
+               
+} else if ( isMale ==False && ageOfPerson > 17 && ageOfPerson < 60 ) {
+    system.debug ( 'kk Should work');
+               
+} else if ( isMale ==False && ageOfPerson > 60 ) {
+    system.debug ( 'kk Should be retired');
+    
+}else {
+    system.debug('He/she is not of school age') ;
+}
+
+
+//Example 12: If the password is starting with uppercases
+//                i)Last character must be '?'
+//                ii)Second character must be 'x'
+//             If the password is starting with lowercases
+//                i)Last character must be '!'
+//                ii)Third character must be 'm'
+           
+
+string password = 'oxmeksifre?!';
+integer firstCondition = password.charAt(0);// 65-91
+integer secondCondition = password.charAt(0);
+
+ if (  firstCondition >=65 && firstCondition<=90 &&  
+     password.endswith('?') && password.substring(1,2).equals('x')){
+     
+           system.debug('sifre dogrudur1');
+        
+ }else if (secondCondition >=97 && firstCondition<=122 && 
+       password.endswith('!') && password.substring(2,3).equals('m')){
+    
+           system.debug('sifre dogrudur2');
+         
+ }else {system.debug('Sifre hatalidir');}
+
+
+
+// LEAP YEAR
+//    IF A YEAR CAN BE DEVIDED BY 100 THE SHOULD BE DIVED BY 400
+//    IF THE YEAR CAN NOT BE DIVED BY 100 IT SHOULD BE DIIVIDED BY 4
+//    THEN THIS YEAR IS CALLED LEAP YEAR
+// do not use  isLeapYear(year)
+ integer year = 2001
+// this year is not a leap year
+ integer year = 2000
+// this is a leap year
